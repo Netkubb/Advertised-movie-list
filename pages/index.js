@@ -7,14 +7,16 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import { useState } from 'react';
 
 export default function ActionAreaCard({movies}) {
-  const [count,setCount] = useState(0);
+  const movieCount = movies.length;
+  let count = 0;
 
   return (
     <Grid container  rowSpacing={4}>
       {movies.map((movie) => {
-        return (
+        count++;
+        return (<>
           <Grid item xs={12} display={"flex"} justifyContent={"center"} key={movie.id} >
-            <Card sx={{ maxWidth: 350 , minHeight: 350}}>
+            <Card sx={{ maxWidth: 300 , minHeight: 350}}>
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -36,7 +38,21 @@ export default function ActionAreaCard({movies}) {
               </CardActionArea>
             </Card>
           </Grid>
-        )
+          {count%5==0 && count != movieCount && 
+          <Grid item xs={12} display={"flex"} justifyContent={"center"} key={"ad"+count/5}>
+            <Card sx={{ maxWidth: 300 , minHeight: 160}}>
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  height="160"
+                  image={"https://res.cloudinary.com/corpjurist/image/upload/v1649122230/5310773_1_goeaym.png"}
+                  alt="green iguana"
+                />
+              </CardActionArea>
+            </Card>
+          </Grid>
+          }
+          </>)
       })}
     </Grid>
     
