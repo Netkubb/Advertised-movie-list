@@ -16,35 +16,33 @@ export default function ActionAreaCard({movies}) {
         count++;
         return (<>
           <Grid item xs={12} display={"flex"} justifyContent={"center"} key={movie.id} >
-            <Card sx={{ maxWidth: 300 , minHeight: 350}}>
-              <CardActionArea>
+            <Card sx={{ width: 568 , minHeight: 500}}>
                 <CardMedia
                   component="img"
-                  height="160"
+                  height="50%"
                   image={movie.image}
                   alt="green iguana"
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="div" >
+                  <Typography gutterBottom variant="h4" component="div" >
                     {movie.name}
                   </Typography>
-                  <Typography gutterBottom variant="body1" component="div" display={"flex"} align={"center"} >
-                    <AccessTimeIcon/> <Typography marginLeft={"1rem"}>{movie.time}</Typography>
+                  <Typography gutterBottom variant="body2" component="div" display={"flex"} align={"center"} >
+                    <AccessTimeIcon/> <Typography variant="body2" sx={{fontWeight:"400"}} marginLeft={1}>{movie.time}</Typography>
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography variant="body2" color="text.primary">
                     {movie.description}
                   </Typography>
                 </CardContent>
-              </CardActionArea>
             </Card>
           </Grid>
           {count%5==0 && count != movieCount && 
           <Grid item xs={12} display={"flex"} justifyContent={"center"} key={"ad"+count/5}>
-            <Card sx={{ maxWidth: 300 , minHeight: 160}}>
+            <Card sx={{ width: 568 }}>
               <CardActionArea>
                 <CardMedia
                   component="img"
-                  height="160"
+                  height="100%"
                   image={"https://res.cloudinary.com/corpjurist/image/upload/v1649122230/5310773_1_goeaym.png"}
                   alt="green iguana"
                 />
