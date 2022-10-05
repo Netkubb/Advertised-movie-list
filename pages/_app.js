@@ -19,6 +19,15 @@ const theme = createTheme({
     text:{
       primary:"black"
     }
+  },
+  components:{
+    MuiCard:{
+      styleOverrides:{
+        root:{
+          borderRadius:"15px"
+        }
+      }
+    }
   }
 });
 

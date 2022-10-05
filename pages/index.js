@@ -15,11 +15,11 @@ export default function ActionAreaCard({movies}) {
       {movies.map((movie) => {
         count++;
         return (<>
-          <Grid item xs={12} display={"flex"} justifyContent={"center"} key={movie.id} >
-            <Card sx={{ width: 568 , minHeight: 500}}>
+          <Grid item sx={{padding:"1rem"}} xs={12} display={"flex"} justifyContent={"center"} key={movie.id} >
+            <Card sx={{ width: 500}}>
                 <CardMedia
                   component="img"
-                  height="50%"
+                  height="400"
                   image={movie.image}
                   alt="green iguana"
                 />
@@ -30,15 +30,15 @@ export default function ActionAreaCard({movies}) {
                   <Typography gutterBottom variant="body2" component="div" display={"flex"} align={"center"} >
                     <AccessTimeIcon/> <Typography variant="body2" sx={{fontWeight:"400"}} marginLeft={1}>{movie.time}</Typography>
                   </Typography>
-                  <Typography variant="body2" color="text.primary">
+                  <Typography variant="body2" color="text.primary" sx={{pb:4}}>
                     {movie.description}
                   </Typography>
                 </CardContent>
             </Card>
           </Grid>
           {count%5==0 && count != movieCount && 
-          <Grid item xs={12} display={"flex"} justifyContent={"center"} key={"ad"+count/5}>
-            <Card sx={{ width: 568 }}>
+          <Grid item sx={{padding:"1rem"}} xs={12} display={"flex"} justifyContent={"center"} key={"ad"+count/5}>
+            <Card sx={{ width: 500 }}>
               <CardActionArea>
                 <CardMedia
                   component="img"
